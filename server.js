@@ -13,7 +13,7 @@ const port = 3000;
 const app = express();
 
 //Asset statici
-app.use('/img'.express.static('public'));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.send('Server del mio blog')
@@ -68,3 +68,6 @@ app.get('/bacheca', (req, res) => {
 // })
 
 //Immagini
+app.get('/', (req, res) => {
+    res.send('<img src="img/ciambellone.jpeg">');
+});
