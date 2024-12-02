@@ -11,3 +11,14 @@ Creiamo il nostro blog personale e giorno dopo giorno lo potremo arricchire con 
 const express = require('express');
 const port = 3000;
 const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Server del mio blog')
+});
+
+
+app.listen(port, () => {
+    console.log('server running on http//:localhost:${port}');
+
+})
+
