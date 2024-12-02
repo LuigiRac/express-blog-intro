@@ -12,6 +12,9 @@ const express = require('express');
 const port = 3000;
 const app = express();
 
+//Asset statici
+app.use('/img'.express.static('public'));
+
 app.get('/', (req, res) => {
     res.send('Server del mio blog')
 });
@@ -63,3 +66,5 @@ app.get('/bacheca', (req, res) => {
 //     console.log('server running on http//:localhost:${port}');
 
 // })
+
+//Immagini
