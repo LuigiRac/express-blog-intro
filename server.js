@@ -12,62 +12,29 @@ const express = require('express');
 const port = 3000;
 const app = express();
 
+const ricetta = require('./ricetta.js');
+
+
 //Asset statici
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.send('Server del mio blog')
-});
+// app.get('/', (req, res) => {
+//     res.send('Server del mio blog')
+// });
 
 app.listen(port, () => {
     console.log('server running on http//:localhost:${port}');
 
 })
 
-const posts = [
-    {
-        titolo: "Ciambellone",
-        contenuto: "Ciambellone",
-        immagine: "/img/ciambellone.jpeg",
-        tags: ["Dolce", "Ricetta"]
-    },
-    {
-        titolo: "Cracker Barbabietola",
-        contenuto: "Cracker Barbabietola",
-        immagine: "/img/cracker_barbabietola.jpeg",
-        tags: ["Cracker", "Ricetta", "Barbabietola"]
-    },
-    {
-        titolo: "Pane Fritto Dolce",
-        contenuto: "Pane Fritto Dolce",
-        immagine: "/img/pane_fritto_dolce.jpeg",
-        tags: ["Pane", "Ricetta", "Dolce"]
-    },
-    {
-        titolo: "Pasta Barbabietola",
-        contenuto: "Pasta Barbabietola",
-        immagine: "/img/pasta_barbabietola.jpeg",
-        tags: ["Pasta", "Ricetta", "Barbabietola"]
-    },
-    {
-        titolo: "Torata Paesana",
-        contenuto: "Torta Paesana",
-        immagine: "/img/torta_paesana.jpeg",
-        tags: ["Torta", "Ricetta", "Dolce"]
-    }
-];
-
 
 //creazione rotta Bacheca
 app.get('/bacheca', (req, res) => {
-    res.json(posts)
+    res.json(ricetta)
 });
-// app.listen(port, () => {
-//     console.log('server running on http//:localhost:${port}');
 
-// })
 
 //Immagini
 app.get('/', (req, res) => {
-    res.send('<img src="img/ciambellone.jpeg">');
+    res.send('<img src = "img/ciambellone.jpeg" > ');
 });
